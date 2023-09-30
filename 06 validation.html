@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=fo, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <button onclick="add()">Add Data</button> -->
+    <button ondblclick="add()">Add Data</button>
+    
+    <form onsubmit="return myvalidation()">
+        <table border="1" width="60%" align="center">
+            <tr>
+                <td bgcolor="darkgray"><label for="username">username</label></td>
+                <td><input type="text" id="username" placeholder="enter your name"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p id="usererror"></p></td>
+            </tr>
+            <tr>
+                <td bgcolor="darkgray"><label for="password">password</label></td>
+                <td><input type="password" id="password" placeholder="enter your password"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p id="passerror"></p></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function add() {
+            // console.log("on click");
+            alert("Hello....")
+        }
+
+        
+        let username = document.getElementById("username")
+        console.log(username);
+    
+        let password = document.getElementById("password")
+        console.log(password);
+       
+
+        let usererror = document.getElementById("usererror")
+        let passerror = document.getElementById("passerror")
+
+        function myvalidation() {
+            console.log("myvalidation");
+            console.log(username.value);
+            console.log(password.value);
+            console.log(password.value.length);
+
+            if(username.value === ""){
+               usererror.innerHTML = "enter your name"
+            }
+            else{
+                usererror.innerHTML = ""
+            }
+
+            if(password.value === ""){
+               passerror.innerHTML = "enter your password"
+            }
+            else{
+                passerror.innerHTML = ""
+            }
+            // else if(password.value.length === "" ){
+            //     passerror.innerHTML = ""
+            // }
+            return false 
+        }
+
+    </script>
+</body>
+</html>
