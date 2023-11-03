@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100%;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <img src="https://picsum.photos/id/237/1000/600" class="slid-img" alt="">
+        <img src="https://picsum.photos/id/257/1000/600" class="slid-img" alt="">
+        <img src="https://picsum.photos/id/247/1000/600" class="slid-img" alt="">
+        <img src="https://picsum.photos/id/337/1000/600" class="slid-img" alt="">
+        <img src="https://picsum.photos/id/227/1000/600" class="slid-img" alt="">
+    </section>
+
+    <script>
+
+        let sliderdata = document.getElementsByClassName("slid-img")
+        console.log(sliderdata);
+        let count = 0
+
+        function slider() {
+             for (let index = 0; index < sliderdata.length; index++) {
+                // const element = array[index];
+               console.log( sliderdata[index]);
+               sliderdata[index].style.display = "none"
+                
+             }
+            //  if(count)
+            // console.log(count);
+            if (count >= sliderdata.length) {
+                count = 0
+                
+            }
+            // console.log(count);
+            sliderdata[count].style.display = "block"
+            count++
+
+            setTimeout(slider , 2000)
+            
+        }
+        slider()
+
+
+
+          
+
+    </script>
+    
+</body>
+</html>
